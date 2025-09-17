@@ -1,0 +1,51 @@
+import * as React from "react";
+import { graphql, HeadFC, PageProps } from "gatsby";
+import EventDetail from "../../components/gallery/event/EventDetail";
+import { SEO } from "../../components/common/Seo";
+
+const EventPage: React.FC<
+  PageProps<
+    Queries.MicrocmsEventQueryQuery,
+    Queries.MicrocmsEventQueryQueryVariables
+  >
+> = ({ data }) => <EventDetail data={data} />;
+
+export const query = graphql`
+  query MicrocmsEventQuery($id: String) {
+    microcmsEvent(id: { eq: $id }) {
+      category {
+        name
+      }
+      eventId
+      title
+      body
+      description
+      startDate(formatString: "YYYY-MM-DD")
+      endDate(formatString: "YYYY-MM-DD")
+      organizer
+      slug
+      image {
+        alt
+        url
+        width
+        height
+      }
+    }
+  }
+`;
+
+export default EventPage;
+
+export const Head: HeadFC<Queries.MicrocmsEventQueryQuery> = ({ data }) => (
+  <SEO
+    title={data.microcmsEvent?.title || "イベントタイトル"}
+    description={data.microcmsEvent?.description || "イベントの詳細情報"}
+    pathname={`/event/${data.microcmsEvent?.slug}`}
+    imagePath={
+      data.microcmsEvent?.image?.url ||
+      "https://www.gallery-aoi.jp/default-ogp.png"
+    }
+    isRelativeImagePath={false}
+    robots={{ index: true, follow: true }}
+  />
+);

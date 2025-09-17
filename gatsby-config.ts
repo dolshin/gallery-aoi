@@ -1,22 +1,49 @@
 import type { GatsbyConfig } from "gatsby";
+import dotenv from "dotenv";
+dotenv.config();
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `gallery-aoi`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `ギャラリーアオイ`,
+    description: `ギャラリーアオイは展示会やワークショップに最適なレンタルギャラリーです。`,
+    siteUrl: `https://www.gallery-aoi.jp`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+  plugins: [
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
+    {
+      resolve: "gatsby-source-microcms",
+      options: {
+        apiKey: process.env.MICROCMS_API_KEY,
+        serviceId: "galleryaoi",
+        apis: [
+          {
+            endpoint: "news",
+          },
+          {
+            endpoint: "reservations",
+          },
+          {
+            endpoint: "event",
+          },
+          { endpoint: "news-category" },
+          { endpoint: "event-category" },
+        ],
+      },
     },
-    __key: "pages"
-  }]
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+  ],
 };
 
 export default config;
