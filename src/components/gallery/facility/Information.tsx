@@ -1,5 +1,5 @@
 import React from "react";
-import Interia from "../../../assets/images/ギャラリー見取り図.jpg";
+import Interia from "../../../assets/images/sketch.jpg";
 import { Image } from "../../common";
 
 const Information = () => {
