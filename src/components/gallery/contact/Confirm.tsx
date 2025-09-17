@@ -67,7 +67,7 @@ const Confirm = () => {
           <Button
             label="戻る"
             onClick={() => {
-              navigate("https://www.gallery-aoi.jp/#Contact");
+              navigate("https://gallery-aoi.netlify.app/#Contact");
             }}
             arrowType="none"
             type="button"

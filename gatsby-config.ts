@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `ギャラリーアオイ`,
     description: `ギャラリーアオイは展示会やワークショップに最適なレンタルギャラリーです。`,
-    siteUrl: `https://www.gallery-aoi.jp`,
+    siteUrl: `https://gallery-aoi.netlify.app`,
   },
   graphqlTypegen: true,
   plugins: [

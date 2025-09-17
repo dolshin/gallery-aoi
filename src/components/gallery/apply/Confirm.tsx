@@ -70,7 +70,7 @@ const Confirm = () => {
           <Button
             label="戻る"
             onClick={() => {
-              navigate("https://www.gallery-aoi.jp/#Apply");
+              navigate("https://gallery-aoi.netlify.app/#Apply");
             }}
             arrowType="none"
             type="button"

@@ -43,7 +43,7 @@ export const Head: HeadFC<Queries.MicrocmsEventQueryQuery> = ({ data }) => (
     pathname={`/event/${data.microcmsEvent?.slug}`}
     imagePath={
       data.microcmsEvent?.image?.url ||
-      "https://www.gallery-aoi.jp/default-ogp.png"
+      "https://gallery-aoi.netlify.app/default-ogp.png"
     }
     isRelativeImagePath={false}
     robots={{ index: true, follow: true }}

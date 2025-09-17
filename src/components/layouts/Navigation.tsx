@@ -191,7 +191,7 @@ const Navigation = () => {
             {NavigationItems.map((section, index) => (
               <li key={index}>
                 <a
-                  href={`https://www.gallery-aoi.jp/#${section}`}
+                  href={`https://gallery-aoi.netlify.app/#${section}`}
                   className={section === activeNavigation ? "selected" : ""}
                   onClick={handleMenuClick}
                 >
