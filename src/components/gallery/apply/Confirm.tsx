@@ -5,6 +5,7 @@ import ConfirmItem from "./ConfirmItem";
 import { FORM_ITEMS } from "./constants";
 import { useApplyStore } from "../../../lib/zustand/store/applyStore";
 import { encode } from "../contact/functions";
+import { SITE_URL } from "../../layouts/constants";
 
 const Confirm = () => {
   const { apply: applyValue, resetApply } = useApplyStore((state) => state);
@@ -70,7 +71,7 @@ const Confirm = () => {
           <Button
             label="戻る"
             onClick={() => {
-              navigate("https://gallery-aoi.netlify.app/#Apply");
+              navigate(`${SITE_URL}/#Apply`);
             }}
             arrowType="none"
             type="button"

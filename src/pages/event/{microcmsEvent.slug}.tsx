@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import EventDetail from "../../components/gallery/event/EventDetail";
 import { SEO } from "../../components/common/Seo";
+import { SITE_URL } from "../../components/layouts/constants";
 
 const EventPage: React.FC<
   PageProps<
@@ -41,10 +42,7 @@ export const Head: HeadFC<Queries.MicrocmsEventQueryQuery> = ({ data }) => (
     title={data.microcmsEvent?.title || "イベントタイトル"}
     description={data.microcmsEvent?.description || "イベントの詳細情報"}
     pathname={`/event/${data.microcmsEvent?.slug}`}
-    imagePath={
-      data.microcmsEvent?.image?.url ||
-      "https://gallery-aoi.netlify.app/default-ogp.png"
-    }
+    imagePath={data.microcmsEvent?.image?.url || `${SITE_URL}/default-ogp.png`}
     isRelativeImagePath={false}
     robots={{ index: true, follow: true }}
   />

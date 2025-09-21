@@ -43,3 +43,5 @@ export const NAVIGATION_ITEMS = {
 export type NAVIGATION_ITEMS_KEY = keyof typeof NAVIGATION_ITEMS;
 export type NAVIGATION_ITEMS_VALUE =
   (typeof NAVIGATION_ITEMS)[keyof typeof NAVIGATION_ITEMS];
+
+export const SITE_URL = "https://www.gallery-aoi.jp";

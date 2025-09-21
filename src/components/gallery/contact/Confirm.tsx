@@ -5,6 +5,7 @@ import ConfirmItem from "./ConfirmItem";
 import { FORM_ITEMS } from "./constants";
 import { useContactStore } from "../../../lib/zustand/store/contactStore";
 import { encode } from "./functions";
+import { SITE_URL } from "../../layouts/constants";
 
 const Confirm = () => {
   const { contact: contactValue, resetContact } = useContactStore(
@@ -67,7 +68,7 @@ const Confirm = () => {
           <Button
             label="戻る"
             onClick={() => {
-              navigate("https://gallery-aoi.netlify.app/#Contact");
+              navigate(`${SITE_URL}/#Contact`);
             }}
             arrowType="none"
             type="button"

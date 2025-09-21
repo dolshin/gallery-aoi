@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NAVIGATION_ITEMS, NAVIGATION_ITEMS_KEY } from "./constants";
+import { NAVIGATION_ITEMS, NAVIGATION_ITEMS_KEY, SITE_URL } from "./constants";
 import HambergerMenu from "./header/HambergerMenu";
 import styled from "styled-components";
 import SNSLinks from "./SNSLinks";
@@ -191,7 +191,7 @@ const Navigation = () => {
             {NavigationItems.map((section, index) => (
               <li key={index}>
                 <a
-                  href={`https://gallery-aoi.netlify.app/#${section}`}
+                  href={`${SITE_URL}/#${section}`}
                   className={section === activeNavigation ? "selected" : ""}
                   onClick={handleMenuClick}
                 >
