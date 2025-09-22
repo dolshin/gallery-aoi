@@ -2,6 +2,7 @@ import React from "react";
 import TopPageItemLayout from "../../layouts/TopPageItemLayout";
 import { Container } from "../../common";
 import ContactForm from "./ContactForm";
+import PrivacyPolicyLink from "../privacy/PrivacyPolicyLink";
 
 const Contact = () => {
   return (
@@ -22,6 +23,9 @@ const Contact = () => {
         </p>
         <div style={{ maxWidth: "750px", margin: "70px 0 0" }}>
           <ContactForm />
+        </div>
+        <div style={{ maxWidth: "750px", margin: "44px 0 0" }}>
+          <PrivacyPolicyLink />
         </div>
       </Container>
     </TopPageItemLayout>
