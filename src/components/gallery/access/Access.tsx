@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TopPageItemLayout from "../../layouts/TopPageItemLayout";
-import Telephone from "../contact/Telephone";
+import Telephone from "./Telephone";
 import { FaParking } from "react-icons/fa";
 import { md } from "../../layouts/breakpoints";
 
@@ -22,7 +22,7 @@ const MapWrapper = styled.div`
 
 const Access: React.FC = () => (
   <TopPageItemLayout id="Access" title="アクセス" subTitle="Access">
-    <p style={{ letterSpacing: "0.18em", lineHeight: 2.5 }}>
+    <p style={{ letterSpacing: "0.18em", lineHeight: 2.5, margin: 0 }}>
       近鉄『大和西大寺』駅から徒歩7分
       <br />
       奈良県奈良市西大寺新田町1-11
@@ -34,6 +34,7 @@ const Access: React.FC = () => (
         //justifyContent: "center",
         alignItems: "center",
         gap: "0.8rem",
+        margin: "0.4em 0",
         letterSpacing: "0.18em",
         lineHeight: 2.5,
 
