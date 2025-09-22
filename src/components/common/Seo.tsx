@@ -54,6 +54,10 @@ export const SEO = ({
       <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:site" content={seo.twitterUsername} />
       <meta
+        name="google-site-verification"
+        content="eymH1Qs0vRUKR9lHfDj8WhwuAjgzODcIInMng810o30"
+      />
+      <meta
         name="robots"
         content={`${robots.index ? "index" : "noindex"}, ${robots.follow ? "follow" : "nofollow"}`}
       />
