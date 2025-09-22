@@ -6,7 +6,6 @@ export const useScroll = () => {
 
   const handleScroll = useThrottleFunc(() => {
     const scrollPosition = window.scrollY;
-    console.log(scrollPosition);
     if (scrollPosition >= 400) {
       setIsActive(true);
     } else {
