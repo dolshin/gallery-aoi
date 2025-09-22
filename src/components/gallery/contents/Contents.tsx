@@ -6,7 +6,6 @@ import Access from "../access/Access";
 import FAQ from "../faq/Faq";
 import Price from "../price/Price";
 import Facility from "../facility/Facility";
-import Apply from "../apply/Apply";
 
 const Contents = () => {
   return (
@@ -18,7 +17,6 @@ const Contents = () => {
       <Event />
       <Access />
       <Contact />
-      <Apply />
     </>
   );
 };

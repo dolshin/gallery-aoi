@@ -34,7 +34,7 @@ export const FORM_ITEMS: FormItemType[] = [
   {
     label: "件名",
     placeholder: "例) ヤマダタロウ",
-    field: "select",
+    field: "subject",
     isRequired: true,
   },
   {
@@ -47,7 +47,8 @@ export const FORM_ITEMS: FormItemType[] = [
 
 export const OPTIONS = [
   { label: "選択してください", value: "" },
-  { label: "見学予約について", value: "見学予約について" },
+  { label: "予約", value: "予約について" },
+  { label: "見学予約", value: "見学予約について" },
   { label: "設備について", value: "設備について" },
   { label: "空き状況について", value: "空き状況について" },
   { label: "その他", value: "その他" },

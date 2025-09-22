@@ -37,7 +37,6 @@ export const NAVIGATION_ITEMS = {
   Event: "イベント",
   Access: "アクセス",
   Contact: "お問い合わせ",
-  Apply: "お申し込み",
 } as const;
 
 export type NAVIGATION_ITEMS_KEY = keyof typeof NAVIGATION_ITEMS;

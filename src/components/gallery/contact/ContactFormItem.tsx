@@ -47,7 +47,7 @@ const ContactFormItem: React.FC<ContactFormItemProps> = ({
               placeholder={placeholder}
             />
           );
-        case "select":
+        case "subject":
           return (
             <select
               {...register(field)}
@@ -81,7 +81,7 @@ const ContactFormItem: React.FC<ContactFormItemProps> = ({
     if (!contact) return;
     setValue("name", contact.name);
     setValue("phoneticName", contact.phoneticName);
-    setValue("select", contact.select);
+    setValue("subject", contact.subject);
     setValue("email", contact.email);
     setValue("phoneNumber", contact.phoneNumber);
     setValue("message", contact.message);

@@ -11,7 +11,7 @@ type ContactStore = {
 const defaultContact: ContactFormType = {
   name: "",
   phoneticName: "",
-  select: "",
+  subject: "",
   email: "",
   phoneNumber: "",
   message: "",

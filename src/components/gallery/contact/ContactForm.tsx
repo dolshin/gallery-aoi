@@ -19,7 +19,7 @@ const ContactForm = () => {
     defaultValues: {
       name: "",
       phoneticName: "",
-      select: "",
+      subject: "",
       email: "",
       phoneNumber: "",
       message: "",

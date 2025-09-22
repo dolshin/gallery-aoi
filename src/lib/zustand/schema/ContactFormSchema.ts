@@ -3,7 +3,7 @@ import * as z from "zod";
 export const ContactFormSchema = z.object({
   name: z.string().min(1, "お名前は必須です。"),
   phoneticName: z.string().min(1, "フリガナは必須です。"),
-  select: z.string().min(1, "件名を選択してください。"),
+  subject: z.string().min(1, "件名を選択してください。"),
   email: z
     .string()
     .min(1, "メールアドレスは必須です。")

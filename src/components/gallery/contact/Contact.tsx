@@ -18,7 +18,7 @@ const Contact = () => {
         <p style={{ width: "100%", letterSpacing: "0.08em", lineHeight: 2.5 }}>
           ご不明な点がございましたら、お気軽にお問い合わせください。
           <br />
-          空き状況の確認、見学の予約なども承っております。
+          空き状況の確認、予約などもこちらから承っております。
         </p>
         <div style={{ maxWidth: "750px", margin: "70px 0 0" }}>
           <ContactForm />
