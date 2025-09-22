@@ -15,6 +15,14 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-robots-txt",
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-YT3774FG56"],
+        gtagConfig: { anonymize_ip: true },
+        pluginConfig: { head: true, respectDNT: true },
+      },
+    },
+    {
       resolve: "gatsby-source-microcms",
       options: {
         apiKey: process.env.MICROCMS_API_KEY,
