@@ -15,7 +15,7 @@ const Confirm = () => {
     e.preventDefault();
 
     try {
-      await fetch("/netlify/functions/contact", {
+      await fetch("/netlify/functions/send-contact-email", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...contactValue }),
