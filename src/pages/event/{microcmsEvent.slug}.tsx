@@ -20,13 +20,11 @@ export const query = graphql`
       eventId
       title
       body
-      description
       startDate(formatString: "YYYY-MM-DD")
       endDate(formatString: "YYYY-MM-DD")
       organizer
       slug
       image {
-        alt
         url
         width
         height
@@ -40,7 +38,9 @@ export default EventPage;
 export const Head: HeadFC<Queries.MicrocmsEventQueryQuery> = ({ data }) => (
   <SEO
     title={data.microcmsEvent?.title || "イベントタイトル"}
-    description={data.microcmsEvent?.description || "イベントの詳細情報"}
+    description={
+      data.microcmsEvent?.body?.slice(0, 120) || "イベントの詳細情報"
+    }
     pathname={`/event/${data.microcmsEvent?.slug}`}
     imagePath={data.microcmsEvent?.image?.url || `${SITE_URL}/default-ogp.png`}
     isRelativeImagePath={false}

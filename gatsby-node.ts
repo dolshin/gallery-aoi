@@ -250,13 +250,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
               eventId
               title
               body
-              description
               startDate
               endDate
               organizer
               slug
               image {
-                alt
                 url
               }
             }

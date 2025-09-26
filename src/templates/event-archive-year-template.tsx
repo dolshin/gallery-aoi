@@ -43,13 +43,11 @@ export const EventArchivePagedQuery = graphql`
           eventId
           title
           body
-          description
           startDate(formatString: "YYYY-MM-DD")
           endDate(formatString: "YYYY-MM-DD")
           organizer
           slug
           image {
-            alt
             url
             width
             height
