@@ -62,7 +62,7 @@ export const SEO = ({
         content={`${robots.index ? "index" : "noindex"}, ${robots.follow ? "follow" : "nofollow"}`}
       />
       <link rel="canonical" href={seo.url} />
-      <link rel="icon" type="image/png" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       {children}
     </>
   );

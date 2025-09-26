@@ -9,7 +9,7 @@ const StyledLink = styled(Link)`
 `;
 const MenuItem = ({ to, name }: MenuItemType) => {
   return (
-    <li style={{ marginRight: "1.5em" }}>
+    <li style={{ marginRight: "1.5em", listStyle: "none" }}>
       <StyledLink to={to}>
         <FaAngleRight
           style={{ fontSize: "14px", marginBottom: "1px", marginRight: "4px" }}
