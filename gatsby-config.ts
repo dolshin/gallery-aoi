@@ -12,6 +12,7 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-robots-txt",
     {

@@ -1,6 +1,5 @@
 import React from "react";
-import Interia from "../../../assets/images/sketch.jpg";
-import { Image } from "../../common";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Information = () => {
   return (
@@ -11,9 +10,7 @@ const Information = () => {
           justifyContent: "flex-start",
           gap: "80px",
           flexWrap: "wrap",
-          //alignItems: "center",
           maxWidth: "fit-content",
-          //margin: "0 auto",
         }}
       >
         <ul
@@ -54,17 +51,13 @@ const Information = () => {
         <figure
           style={{
             margin: "-50px 0 0",
-            //paddingTop: "20px",
-            // paddingRight: "8vw",
             overflow: "hidden",
             maxWidth: "520px",
           }}
         >
-          <Image
-            src={Interia}
+          <StaticImage
+            src="../../../assets/images/sketch.jpg"
             alt="ギャラリー見取り図"
-            width="100%"
-            height="auto"
           />
         </figure>
       </div>

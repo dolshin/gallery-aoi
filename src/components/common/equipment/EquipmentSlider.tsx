@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "../slider/Slider";
 import { Settings } from "react-slick";
 import EquipmentSliderItem from "./EquipmentSliderItem";
-import { EQUIPMENT_SLIDER_ITEMS } from "../../gallery/facility/constants";
+import { EQUIPMENT_SLIDER_ITEMS } from "./constants";
 
 type EquipmentSliderProps = {
   SliderType: keyof typeof EQUIPMENT_SLIDER_ITEMS;

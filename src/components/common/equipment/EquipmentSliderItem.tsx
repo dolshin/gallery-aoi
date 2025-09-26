@@ -1,18 +1,15 @@
 import React from "react";
-import { Image } from "..";
 
 type EquipmentSliderItemProps = {
-  src: string;
-  alt: string;
+  image: React.ReactNode;
   figcaption: string;
 };
 const EquipmentSliderItem = ({
-  src,
-  alt,
+  image,
   figcaption,
 }: EquipmentSliderItemProps) => {
   return (
-    <div style={{}}>
+    <>
       <figure
         style={{
           margin: "0",
@@ -21,7 +18,7 @@ const EquipmentSliderItem = ({
           borderRadius: "16px",
         }}
       >
-        <Image width="100%" height="auto" src={src} alt={alt} />{" "}
+        {image}
       </figure>
       <figcaption
         style={{
@@ -31,7 +28,7 @@ const EquipmentSliderItem = ({
       >
         {figcaption}
       </figcaption>
-    </div>
+    </>
   );
 };
 

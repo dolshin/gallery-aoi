@@ -1,5 +1,4 @@
 import React from "react";
-import Gallery from "../../assets/images/gallery-aoi-outside.png";
 
 import styled from "styled-components";
 const StyledImg = styled.img`
@@ -14,19 +13,30 @@ const StyledImg = styled.img`
 type ImageProps = {
   src: string | null | undefined;
   alt: string;
-  width: number | string;
-  height: number | string;
+  width?: number;
+  height?: number;
   style?: React.CSSProperties;
+  className?: string;
 };
-export const Image = ({ src, alt, width, height, style }: ImageProps) => {
+export const Image = ({
+  src,
+  alt,
+  width,
+  height,
+  style,
+  className,
+}: ImageProps) => {
+  const optimizedUrl = `${src}?q=80&fm=webp`;
+
   return (
     <StyledImg
+      src={optimizedUrl}
+      alt={alt}
       width={width}
       height={height}
-      src={src ?? Gallery}
       style={style}
-      alt={alt}
-      decoding="async"
+      className={className}
+      loading="lazy"
     />
   );
 };

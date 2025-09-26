@@ -1,6 +1,5 @@
 import { Link } from "gatsby";
 import React from "react";
-import Icon from "../../../assets/images/gallery-aoi.png";
 import styled from "styled-components";
 import EventHoldingPeriod from "./EventHoldingPeriod";
 import { Image } from "../../common";
@@ -98,12 +97,7 @@ const EventListItem: React.FC<EventListProps> = ({ event }) => {
               maxWidth: "320px",
             }}
           >
-            <Image
-              width="100%"
-              height="auto"
-              src={event.image?.url ?? Icon}
-              alt={event.image?.alt ?? ""}
-            />{" "}
+            <Image src={event.image?.url} alt={event.title ?? ""} />{" "}
           </figure>
           <div>
             <Date>

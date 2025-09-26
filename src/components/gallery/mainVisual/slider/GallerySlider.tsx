@@ -18,8 +18,8 @@ const GallerySlider: React.FC = () => {
   return (
     <Slider
       settings={settings}
-      sliderItems={GALLERY_SLIDER_ITEMS.map((item, index) => (
-        <GallerySliderItem key={index} {...item} />
+      sliderItems={GALLERY_SLIDER_ITEMS.map((image, index) => (
+        <GallerySliderItem key={index} image={image} />
       ))}
     />
   );
