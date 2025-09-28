@@ -1,52 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container } from "../../common";
 import { navigate } from "gatsby";
 import ConfirmItem from "./ConfirmItem";
 import { FORM_ITEMS } from "./constants";
 import { useContactStore } from "../../../lib/zustand/store/contactStore";
-import { encode } from "./functions";
 import { SITE_URL } from "../../layouts/constants";
+import { ApiResponse } from "../../../types/send-email.type";
 
 const Confirm = () => {
   const { contact: contactValue, resetContact } = useContactStore(
     (state) => state,
   );
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      await fetch("/netlify/functions/send-contact-email", {
+      setLoading(true);
+      const response = await fetch("/netlify/functions/send-contact-email", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...contactValue }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(contactValue),
       });
-      navigate("/contact/thanks");
+      const result = (await response.json()) as ApiResponse;
+      if (!response.ok || "error" in result.body) {
+        const error = "error" in result.body ? result.body.error : undefined;
+        throw new Error(error || "送信に失敗しました");
+      }
       resetContact();
+      navigate("/contact/thanks");
     } catch (error) {
-      alert("送信失敗: " + error);
+      console.error(error);
+      setErrorMessage(
+        error instanceof Error ? error.message : "不明なエラーが発生しました",
+      );
+    } finally {
+      setLoading(false);
     }
   };
   return (
     <Container style={{ textAlign: "center", minHeight: "100vh" }}>
       <h2>入力内容の確認</h2>
       <p>下記の内容で問題がなければ送信するボタンを押してください。</p>
-      <form
-        name="contact"
-        action="/contact/thanks/"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={onSubmit}
-      >
-        {/* Netlify がフォームを認識するために必要 */}
-        <input type="hidden" name="form-name" value="contact" />
-
-        {/* スパム対策 */}
-        <p hidden>
-          <label>
-            Don’t fill this out: <input name="bot-field" />
-          </label>
-        </p>
+      <form onSubmit={onSubmit}>
         {FORM_ITEMS.map((item, index) => {
           return (
             <ConfirmItem
@@ -80,7 +77,7 @@ const Confirm = () => {
             }}
           />
           <Button
-            label="送信する"
+            label={loading ? "送信中..." : "送信する"}
             type="submit"
             arrowType="none"
             style={{
@@ -91,6 +88,9 @@ const Confirm = () => {
             }}
           />
         </div>
+        {errorMessage && (
+          <p style={{ color: "red", marginTop: "20px" }}>{errorMessage}</p>
+        )}
       </form>
     </Container>
   );

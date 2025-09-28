@@ -1,7 +1,6 @@
 import type { Handler, HandlerEvent } from "@netlify/functions";
 import formData from "form-data";
 import Mailgun from "mailgun.js";
-import { MessagesSendResult } from "mailgun.js/definitions";
 import { ContactFormType } from "../../lib/zustand/schema/ContactFormSchema";
 
 const mailgun = new Mailgun(formData);
@@ -15,14 +14,19 @@ export const handler: Handler = async (event: HandlerEvent) => {
     if (!event.body) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ error: "Missing request body" }),
+        body: JSON.stringify({ error: "リクエストボディが不足しています" }),
       };
     }
 
     const { name, phoneticName, subject, email, phoneNumber, message } =
       JSON.parse(event.body) as ContactFormType;
-
-    const result: MessagesSendResult = await mg.messages.create(
+    if (!name || !phoneticName || !email || !subject || !message) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "必須項目が不足しています" }),
+      };
+    }
+    const result = await mg.messages.create(
       process.env.MAILGUN_DOMAIN as string,
       {
         from: process.env.MAILGUN_FROM as string,
@@ -50,7 +54,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
     };
   } catch (err: unknown) {
     const errorMessage =
-      err instanceof Error ? err.message : "Unknown error occurred";
+      err instanceof Error ? err.message : "不明なエラーが発生しました";
 
     return {
       statusCode: 500,
