@@ -18,7 +18,7 @@ const Confirm = () => {
 
     try {
       setLoading(true);
-      const response = await fetch("/netlify/functions/send-contact-email", {
+      const response = await fetch("/.netlify/functions/send-contact-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(contactValue),
@@ -31,7 +31,7 @@ const Confirm = () => {
       resetContact();
       navigate("/contact/thanks");
     } catch (error) {
-      console.error(error);
+      //console.error(error);
       setErrorMessage(
         error instanceof Error ? error.message : "不明なエラーが発生しました",
       );
