@@ -28,8 +28,8 @@ const Confirm = () => {
         const error = !result.success ? result.error : undefined;
         throw new Error(error || "送信に失敗しました");
       }
-      resetContact();
       navigate("/contact/thanks");
+      resetContact();
     } catch (error) {
       console.error(error);
       setErrorMessage(
