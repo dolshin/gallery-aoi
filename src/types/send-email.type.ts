@@ -1,7 +1,6 @@
-export type ApiResponse = {
-  statusCode: number;
-  body: { error?: string } | { success: boolean; id: string | undefined };
-};
+export type ApiSuccess = { success: true; id: string | undefined };
+export type ApiFailure = { success: false; error: string };
+export type ApiResponse = ApiSuccess | ApiFailure;
 
 export const ERROR_CODES = {
   VALIDATION_ERROR: "VALIDATION_ERROR",

@@ -24,14 +24,14 @@ const Confirm = () => {
         body: JSON.stringify(contactValue),
       });
       const result = (await response.json()) as ApiResponse;
-      if (!response.ok || "error" in result.body) {
-        const error = "error" in result.body ? result.body.error : undefined;
+      if (!response.ok || !result.success) {
+        const error = !result.success ? result.error : undefined;
         throw new Error(error || "送信に失敗しました");
       }
       resetContact();
       navigate("/contact/thanks");
     } catch (error) {
-      //console.error(error);
+      console.error(error);
       setErrorMessage(
         error instanceof Error ? error.message : "不明なエラーが発生しました",
       );

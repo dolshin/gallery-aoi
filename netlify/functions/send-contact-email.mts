@@ -14,7 +14,10 @@ export const handler: Handler = async (event: HandlerEvent) => {
     if (!event.body) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ error: "リクエストボディが不足しています" }),
+        body: JSON.stringify({
+          success: false,
+          error: "リクエストボディが不足しています",
+        }),
       };
     }
 
@@ -23,7 +26,10 @@ export const handler: Handler = async (event: HandlerEvent) => {
     if (!name || !phoneticName || !email || !subject || !message) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ error: "必須項目が不足しています" }),
+        body: JSON.stringify({
+          success: false,
+          error: "必須項目が不足しています",
+        }),
       };
     }
     const result = await mg.messages.create(
@@ -58,7 +64,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
 
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: errorMessage }),
+      body: JSON.stringify({ success: false, error: errorMessage }),
     };
   }
 };
