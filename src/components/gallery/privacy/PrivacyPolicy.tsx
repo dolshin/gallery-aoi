@@ -157,7 +157,7 @@ const PrivacyPolicy = () => {
         </P>
       </section>
       <section>
-        <P>10.プライバシーポリシーの制定日及び改定日</P>
+        <Subtitle>10.プライバシーポリシーの制定日及び改定日</Subtitle>
         <P>制定：2025年10月01日</P>
       </section>
 
