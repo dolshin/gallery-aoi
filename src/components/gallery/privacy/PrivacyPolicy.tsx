@@ -3,7 +3,8 @@ import styled from "styled-components";
 import PageLayout from "../../layouts/PageLayout";
 import { Button } from "../../common";
 
-const Subtitle = styled.h2`
+const Subtitle = styled.h3`
+  font-size: 1.2rem;
   margin-bottom: 12px;
 `;
 
@@ -19,9 +20,19 @@ const Anchor = styled.a`
   color: #0b67d0;
 `;
 
+const StyledPageLayout = styled(PageLayout)`
+  @media (width >= 1100px) {
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+  }
+`;
+
 const PrivacyPolicy = () => {
   return (
-    <PageLayout title="プライバシーポリシー" subTitle="">
+    <StyledPageLayout title="プライバシーポリシー" subTitle="">
       <p>
         ギャラリーアオイは，ユーザーの個人情報について以下のとおりプライバシーポリシーを定めます。
       </p>
@@ -34,7 +45,9 @@ const PrivacyPolicy = () => {
           <li>所在地：奈良県奈良市西大寺新田町1-11</li>
           <li>
             お問い合わせ：
-            <Anchor href={`mailto:example@gmail.com`}>example@gmail.com</Anchor>
+            <Anchor href={`mailto:galleryaoi2025@gmail.com`}>
+              galleryaoi2025@gmail.com
+            </Anchor>
           </li>
         </Ul>
       </section>
@@ -145,13 +158,13 @@ const PrivacyPolicy = () => {
       </section>
       <section>
         <h2>10.プライバシーポリシーの制定日及び改定日</h2>
-        <P>制定：○○年○月○日</P>
+        <P>制定：2025年10月01日</P>
       </section>
 
       <div style={{ margin: "40px 0 0" }}>
         <Button to="/" label="トップページに戻る" />
       </div>
-    </PageLayout>
+    </StyledPageLayout>
   );
 };
 

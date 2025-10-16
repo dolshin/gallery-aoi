@@ -5,7 +5,7 @@ export const EQUIPMENT_LIST_ITEMS = {
       count: "8台",
     },
     {
-      name: "ワゴン低い長椅子兼机",
+      name: "キャスター付き長椅子",
       count: "2台",
     },
     {

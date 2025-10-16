@@ -61,11 +61,19 @@ const GalleryPrice = () => {
           </TableRow>
           <TableRow>
             <TableCell>1日レンタル</TableCell>
-            <TableCell>8,000円（土日9,000円 ）</TableCell>
+            <TableCell>
+              <span style={{ marginLeft: "18px" }}>
+                8,000円（土日9,000円 ）
+              </span>
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>1週間レンタル</TableCell>
-            <TableCell>40,000円</TableCell>
+            <TableCell>
+              <span style={{ textDecoration: "line-through" }}>54,000円</span>
+              <span style={{ margin: "0 0.4em" }}> → </span>
+              <span style={{ color: "red" }}>40,000円 </span>
+            </TableCell>
           </TableRow>
         </TableBody>
       </Table>

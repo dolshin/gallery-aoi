@@ -6,16 +6,18 @@ type PageLayoutProps = {
   title: string;
   subTitle: string;
   style?: React.CSSProperties;
+  className?: string;
   children: React.ReactNode;
 };
 const PageLayout: React.FC<PageLayoutProps> = ({
   title,
   subTitle,
   style,
+  className,
   children,
 }) => {
   return (
-    <Container style={{ minHeight: "100vh", ...style }}>
+    <Container style={{ minHeight: "100vh", ...style }} className={className}>
       <TopPageItemTitle
         title={title}
         subTitle={subTitle}

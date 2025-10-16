@@ -14,7 +14,7 @@ export const FORM_ITEMS: FormItemType[] = [
     isRequired: true,
   },
   {
-    label: "お名前(フリガナ)",
+    label: "フリガナ",
     placeholder: "例) ヤマダタロウ",
     field: "phoneticName",
     isRequired: true,
@@ -45,7 +45,7 @@ export const FORM_ITEMS: FormItemType[] = [
   },
 ] as const;
 
-export const OPTIONS = [
+export const SUBJECT_OPTIONS = [
   { label: "選択してください", value: "" },
   { label: "予約", value: "予約について" },
   { label: "見学予約", value: "見学予約について" },

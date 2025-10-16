@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 import { useReactHookFormContext } from "../../../lib/hooks/useReactHookFormContext";
 import { ContactFormType } from "../../../lib/zustand/schema/ContactFormSchema";
-import { OPTIONS } from "./constants";
+import { SUBJECT_OPTIONS } from "./constants";
 import { useContactStore } from "../../../lib/zustand/store/contactStore";
 const FormStyle = {
   display: "block",
@@ -41,6 +41,7 @@ const ContactFormItem: React.FC<ContactFormItemProps> = ({
             <textarea
               cols={40}
               rows={10}
+              id={field}
               {...register(field)}
               style={FormStyle}
               aria-invalid="false"
@@ -50,10 +51,11 @@ const ContactFormItem: React.FC<ContactFormItemProps> = ({
         case "subject":
           return (
             <select
+              id={field}
               {...register(field)}
               style={{ ...FormStyle, appearance: "none" }}
             >
-              {OPTIONS.map((option, index) => (
+              {SUBJECT_OPTIONS.map((option, index) => (
                 <option
                   value={option.value}
                   key={index}
@@ -68,6 +70,7 @@ const ContactFormItem: React.FC<ContactFormItemProps> = ({
           return (
             <input
               type="text"
+              id={field}
               {...register(field)}
               style={FormStyle}
               placeholder={placeholder}
@@ -79,19 +82,20 @@ const ContactFormItem: React.FC<ContactFormItemProps> = ({
   );
   useEffect(() => {
     if (!contact) return;
-    setValue("name", contact.name);
-    setValue("phoneticName", contact.phoneticName);
-    setValue("subject", contact.subject);
-    setValue("email", contact.email);
-    setValue("phoneNumber", contact.phoneNumber);
-    setValue("message", contact.message);
+
+    Object.entries(contact).forEach(([key, value]) => {
+      setValue(key as keyof ContactFormType, value);
+    });
   }, [contact, setValue]);
   return (
     <div style={{ marginBottom: "25px" }}>
       <dt style={{ display: "flex", padding: "10px 0" }}>
-        <span style={{ fontSize: "15px", letterSpacing: "0.15em" }}>
+        <label
+          htmlFor={field}
+          style={{ fontSize: "15px", letterSpacing: "0.15em" }}
+        >
           {label}
-        </span>
+        </label>
 
         {isRequired && <span style={{ color: "#E73828" }}>*</span>}
       </dt>

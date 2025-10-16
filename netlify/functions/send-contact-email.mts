@@ -37,7 +37,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
       {
         from: process.env.MAILGUN_FROM as string,
         to: [process.env.MAILGUN_TO as string],
-        subject: "新しいお問い合わせが届きました",
+        subject: "ギャラリーアオイから新しいお問い合わせが届きました",
         text: `名前: ${name}\n フリガナ: ${phoneticName}\n 件名: ${subject}\n メール: ${email}\n 電話番号: ${phoneNumber}\nメッセージ:${message}`,
         // html: `
         //   <h2>新しいお問い合わせ</h2>

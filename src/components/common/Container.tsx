@@ -4,6 +4,7 @@ import styled from "styled-components";
 type ContainerProps = {
   children: React.ReactNode;
   style?: React.CSSProperties;
+  className?: string;
 };
 
 const StyledContainer = styled.div`
@@ -11,6 +12,14 @@ const StyledContainer = styled.div`
   margin: 0 auto;
 `;
 
-export const Container: React.FC<ContainerProps> = ({ children, style }) => {
-  return <StyledContainer style={style}>{children}</StyledContainer>;
+export const Container: React.FC<ContainerProps> = ({
+  children,
+  style,
+  className,
+}) => {
+  return (
+    <StyledContainer style={style} className={className}>
+      {children}
+    </StyledContainer>
+  );
 };

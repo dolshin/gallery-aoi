@@ -14,7 +14,7 @@ export const FORM_ITEMS: FormItemType[] = [
     isRequired: true,
   },
   {
-    label: "お名前(フリガナ)",
+    label: "フリガナ",
     placeholder: "例) ヤマダタロウ",
     field: "phoneticName",
     isRequired: true,

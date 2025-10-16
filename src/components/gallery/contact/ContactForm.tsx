@@ -34,7 +34,7 @@ const ContactForm = () => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(handleSubmit)}>
+      <form name="contact" onSubmit={methods.handleSubmit(handleSubmit)}>
         <dl
           style={{
             //padding: "0 60px",
