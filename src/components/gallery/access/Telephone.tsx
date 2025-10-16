@@ -26,7 +26,7 @@ const Telephone = ({ phoneNumber }: TelephoneProps) => {
           href={`tel:${phoneNumber}`}
         >
           {phoneNumber}
-          <span style={{ fontSize: "16px" }}>（上村まで）</span>
+          <span style={{ fontSize: "16px" }}>（担当者：上村）</span>
         </a>
       </div>
     </div>
