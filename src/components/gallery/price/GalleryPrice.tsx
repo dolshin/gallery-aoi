@@ -70,7 +70,7 @@ const GalleryPrice = () => {
           <TableRow>
             <TableCell>1週間レンタル</TableCell>
             <TableCell>
-              <span style={{ textDecoration: "line-through" }}>54,000円</span>
+              <span style={{ textDecoration: "line-through" }}>58,000円</span>
               <span style={{ margin: "0 0.4em" }}> → </span>
               <span style={{ color: "red" }}>40,000円 </span>
             </TableCell>
