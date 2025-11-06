@@ -95,6 +95,7 @@ const EventListItem: React.FC<EventListProps> = ({ event }) => {
               overflow: "hidden",
               borderRadius: "12px",
               maxWidth: "320px",
+              maxHeight: "200px",
             }}
           >
             <Image src={event.image?.url} alt={event.title ?? ""} />{" "}
