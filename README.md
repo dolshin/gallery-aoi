@@ -1,4 +1,22 @@
-# ギャラリーアオイ公式サイト
+<h1> 📖 ギャラリーアオイ 公式サイト（Gatsby版）</h1>
+
+<div align="center">
+
+![Gatsby](https://img.shields.io/badge/Gatsby-5.14.1-663399?style=flat-square&logo=gatsby)
+![Styled Components](https://img.shields.io/badge/styled--components-6.1.18-DB7093?style=flat-square&logo=styled-components)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178C6?style=flat-square&logo=typescript)
+![Netlify](https://img.shields.io/badge/Netlify-Hosting-00C7B7?style=flat-square&logo=netlify)
+
+<br/>
+
+**レンタルギャラリー「ギャラリーアオイ」の公式サイトとして、  
+高速表示・低コスト運用を目的に構築したWebサイト**
+
+<br/>
+
+👉 [ギャラリーアオイ](https://www.gallery-aoi.jp)
+
+</div>
 
 ## 📖 概要
 
