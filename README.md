@@ -36,21 +36,19 @@
 
 ## 📚 技術スタック
 
-| 分類           | 使用技術                    |
-| -------------- | --------------------------- |
-| フロントエンド | **Gatsby v5**               |
-| 言語           | TypeScript                  |
-| CMS            | **microCMS（Content API）** |
-| スタイリング   | Styled Components           |
-| 画像最適化     | Gatsby Image / Sharp        |
-| バックエンド   | Netlify Functions           |
-| 状態管理       | Zustand                     |
-| フォーム       | Mailgun API                 |
-| ホスティング   | Netlify                     |
-| パッケージ管理 | npm                         |
-| 環境管理       | dotenv                      |
-| 品質管理       | ESLint / Prettier           |
-| デプロイ       | GitHub → Netlify 自動ビルド |
+| 分類           | 使用技術                    | 選定理由 |
+| -------------- | --------------------------- | -------- |
+| フレームワーク | Gatsby v5                    | 静的サイト生成に強く、SEO・表示速度を重視した構成を実現するため |
+| 言語           | TypeScript                  | コンポーネント設計・CMSレスポンスの型安全性を確保するため |
+| CMS            | microCMS　　　　　　　　     | 非エンジニアでも更新可能な運用体制を構築するため |
+| スタイリング   | Styled Components           | コンポーネント単位でスタイルを管理しやすいため |
+| 画像最適化     | Gatsby Image / Sharp        | ビルド時に画像最適化を行い、表示速度を向上させるため |
+| サーバーレス   | Netlify Functions           | サーバーレスで問い合わせ処理を実装し、運用コストを抑えるため |
+| 状態管理       | Zustand                     | 小規模サイトにおいて、シンプルに状態を管理するため |
+| メール送信      | Mailgun API                 | フロントエンドのみでメール送信を完結させるため |
+| ホスティング   | Netlify                     | CI/CDを簡単に構築できるため |
+| 環境変数       | dotenv                      | 環境変数を安全に管理するため |
+| 品質管理       | ESLint / Prettier           | コード品質と可読性を保つため |
 
 ---
 
